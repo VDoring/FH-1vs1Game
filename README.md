@@ -1,4 +1,4 @@
-# FH-vsRPG_Game
+# FH-Player-vs-Monster-TurnGame
 
 #### Third FST HDR Project. Player vs Monster Turn game!
 
