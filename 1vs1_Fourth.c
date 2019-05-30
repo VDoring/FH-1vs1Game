@@ -1,311 +1,210 @@
-/*
-#include <stdio.h>
-int main()
-{
-	// ¼±ÅÃÁö 
-	int First_select; //Ä³¸¯ÅÍ¸¦ Á¤ÇÏ´Â º¯¼ö
-	int Second_select; //°ÔÀÓ½ÃÀÛ°ú µ¥ÀÌÅÍÃÊ±âÈ­Áß ¹«¾ùÀ» ¼±ÅÃÇÒÁö Á¤ÇÏ´Â º¯¼ö
-	int Number_of_plays; //ÇÃ·¹ÀÌÇÑ ÈÜ¼ö¸¦ ÀúÀåÇÏ´Â º¯¼ö.(°ÔÀÓ ½ÃÀÛÇÏ±â Àü¿¡ µ¥ÀÌÅÍ¸¦ ÃÊ±âÈ­ÇÒ²«Áö ¸»²«Áö¿¡ ´ëÇÑ ÆÇ´Ü¿¡ »ç¿ë)
-	int Continue_or_Reset; //Ä³¸¯ÅÍ¸¦ °í¸£°í °ÔÀÓÀ» ½ÃÀÛÇÏ±â Àü °è¼ÓÇÒ²«Áö ÃÊ±âÈ­ÇÒ²«Áö ¼±ÅÃÇÏ´Â º¯¼ö
-
-	// Ä³¸¯ÅÍ¿Í ÇÃ·¹ÀÌ¾î ½ºÅÈ
-	int Attacker_HP = 130, Attacker_ATK = 120, Attacker_DEF = 50; //Attacker ±âº»½ºÅÈ
-	int Defender_HP = 200, Defender_ATK = 60, Defender_DRF = 100; //Depender ±âº»½ºÅÈ
-	int Allrounder_HP = 100, Allrounder_ATK = 100, Allrounder_DEF = 100; //Allrounder ±âº»½ºÅÈ
-	int Player_HP, Player_ATK, Player_DEF; //½Ç ÀüÅõ¿¡¼­ »ç¿ëÇÏ´Â ½ºÅÈ(¼±ÅÃÇÑ Ä³¸¯ÅÍÀÇ ´É·ÂÄ¡¸¦ º¹»çÇØ »ç¿ëÇÏ´Â º¯¼ö)
-	int LV, EXP; //ÇÃ·¹ÀÌ¾î °æÇèÄ¡
-
-	// ÀüÅõÁß
-	int Attack_Num;
-
-	printf("\n[MAIN] --Welcome to HDR 1vs1--\n\n\n"); //¸ŞÀÎ
-	while (1) {
-		while (1) {
-			printf("<<°ÔÀÓ½ÃÀÛÀº 1¹ø, µ¥ÀÌÅÍÃÊ±âÈ­´Â 2¹ø, Á¾·á´Â 3¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.>>\n"); //¸ŞÀÎ¼±ÅÃÁö
-			scanf("%d", &First_select);
-			if (First_select != 0) break;
-		}
-		while (1) {
-			if (First_select == 1) {//Ä³¸¯ÅÍ ¼±ÅÃ
-				printf("\n\n\"Ä³¸¯ÅÍ¸¦ ¼±ÅÃÇÏ½Ê½Ã¿À\"\n\n");
-				printf(" [1]Attacker - °ø°İ¿¡ Æ¯È­µÇ¾î ÀÖ½À´Ï´Ù.\n [2]Defender - ¹æ¾î¿¡ Æ¯È­µÇ¾î ÀÖ½À´Ï´Ù.\n [3]Allrounder - º§·±½ºÇüÀÔ´Ï´Ù.\n\n"); //Ä³¸¯ÅÍ ¼³¸í
-				scanf("%d", &Second_select);
-
-				if (Second_select == 1) {
-					Player_HP = Attacker_HP;
-					Player_ATK = Attacker_ATK;
-					Player_DEF = Attacker_DEF;
-					printf("¼ÂÆÃ¼º°ø");//-----------------------------------------------------------------------------ÀÌ ÀÌÈÄ·Î ±³Á¤ÇÏ±â(´Ù¸¥ º¯¼ö¸¦ ½á¾ßÇÏ³ª?)
-				}
-
-				if (Second_select == 99) { //Ä³¸¯ÅÍ¼±ÅÃÀ» Ãë¼ÒÇÏ°í ¸ŞÀÎÈ­¸éÀ¸·Î µ¹¾Æ¿Í¾ßÇÒ¶§
-					break;
-				}
-			}
-				if (Number_of_plays > 0) { //ÀÌ¹Ì Àü¿¡ ÇÃ·¹ÀÌÇßÀ»°æ¿ì
-					printf("´ç½ÅÀº ÀÌ¹Ì %dÇÃ·¹ÀÌ ÇÏ¿´½À´Ï´Ù.\nÇÃ·¹ÀÌÇÏ´ø µ¥ÀÌÅÍ°¡ ³²¾ÆÀÖ¾î ÀÌ´ë·Î ÁøÇàÇÏ½Ç °æ¿ì ´ç½ÃÀÇ ´É·ÂÄ¡¸¦ Åä´ë·Î °ÔÀÓÀÌ ÁøÇàµË´Ï´Ù.\n", Number_of_plays);
-					printf("<<°è¼ÓÇÏ½Ã·Á¸é 1¹ø, µ¥ÀÌÅÍÃÊ±âÈ­´Â 2¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.>>\n");
-					scanf("%d", &Continue_or_Reset);
-
-					while (1) {
-						if (Continue_or_Reset == 1) { //1¹ø.°è¼ÓÇÏ±â
-							printf("ÀÌÀü µ¥ÀÌÅÍ ±×´ë·Î °ÔÀÓÀ» ÁøÇàÇÕ´Ï´Ù.\n\n");
-							break;
-						}
-						if (Continue_or_Reset == 2) {
-							Attacker_HP = 130, Attacker_ATK = 120, Attacker_DEF = 50;
-							Defender_HP = 200, Defender_ATK = 60, Defender_DRF = 100;
-							Allrounder_HP = 100, Allrounder_ATK = 100, Allrounder_DEF = 100;
-							LV = 0, EXP = 0;
-							printf(" [ÃÊ±âÈ­°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù!] \n");
-							break;
-						}
-						else printf("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.\n");
-					}
-				}
-
-				printf("°ÔÀÓÀÌ ½ÃÀÛµË´Ï´Ù!\n");
-
-				printf(" -STAGE 1 : ¹ÌÁöÀÇ ¼¼°è"); //°ÔÀÓ½ÃÀÛ. STAGE 1
-				printf("\n\n[STORY]\n´ç½ÅÀº ±æÀ» °¡°í ÀÖ¾ú´Ù.\nÇÏÁö¸¸ ´ç½ÅÀÌ °¡´Â ÀÌ ±æÀº Æò¼Ò¿¡ Èä¾ÇÇÑ ¸ó½ºÅÍµéÀÌ ¸¹ÀÌ ³ªÅ¸³ª°í, ÇÏÇÊ Áö±İÀº ¹ãÀÌ¶ó ´õ ¸¹ÀÌ Ãâ¸ôÇÑ´Ù.\n ±×¸®°í ¾î´À¼¼ ´ç½ÅÀº µÚ¸¦ ¦i°íÀÖ´ø ¸ó½ºÅÍ¸¦ º¸°Ô µÇ´Âµ¥..\n"); //STAGE 1 ½ºÅä¸®
-
-
-				printf("¹«¾ùÀ» ÇÒ±î?\n");
-				printf("[1]¶§¸®±â    [2]ÇÒÄû±â    [3]Â÷±â    [4]º£±â]\nÀÔ·Â -> ");
-				scanf("%d", &Attack_Num);
-			}
-			if (First_select == 2) {
-				Attacker_HP = 130, Attacker_ATK = 120, Attacker_DEF = 50;
-				Defender_HP = 200, Defender_ATK = 60, Defender_DRF = 100;
-				Allrounder_HP = 100, Allrounder_ATK = 100, Allrounder_DEF = 100;
-				LV = 0, EXP = 0;
-				printf(" [ÃÊ±âÈ­°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù!] \n");
-				break;
-			}
-			if (First_select == 3) {
-				break;
-			}
-			else {
-				printf("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.\n");
-				break;
-			}
-		}
-	printf("-> ÀÌ¿ëÇØ ÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù!\n\n");
-	return 0;
-}
-*/
-/*
-¹®Á¦Á¡ : °ÔÀÓÀÌ Á¾·áµÇÁö ¾ÊÀ½. (3¹ø Å°¸¦ ´­·¯µµ)
-*/
-
-
-#include <stdio.h> //¹öÀü 2
+#include <stdio.h> //ë²„ì „ 2
 #include <stdlib.h>
 #include <time.h>
 
 int main()
 {
-	/* ¼±ÅÃÁö */
-	int First_select; //Ã¹¹øÂ° ¼±ÅÃ. ½ÃÀÛ, ÃÊ±âÈ­, Á¾·áÁß ¾î¶²°ÍÀ» ¼±ÅÃÇÒÁö Á¤ÇÏ´Â º¯¼ö
-	int Character_select; //µÎ¹øÂ° ¼±ÅÃ. ¾î¶² Ä³¸¯ÅÍ¸¦ °í¸¦Áö Á¤ÇÏ´Â º¯¼ö
+	/* ì„ íƒì§€ */
+	int First_select; //ì²«ë²ˆì§¸ ì„ íƒ. ì‹œì‘, ì´ˆê¸°í™”, ì¢…ë£Œì¤‘ ì–´ë–¤ê²ƒì„ ì„ íƒí• ì§€ ì •í•˜ëŠ” ë³€ìˆ˜
+	int Character_select; //ë‘ë²ˆì§¸ ì„ íƒ. ì–´ë–¤ ìºë¦­í„°ë¥¼ ê³ ë¥¼ì§€ ì •í•˜ëŠ” ë³€ìˆ˜
 
-	/* Ä³¸¯ÅÍ/¸ó½ºÅÍ ½ºÅÈ*/
-	int Attacker_HP = 130, Attacker_ATK = 120, Attacker_DEF = 50; //Attacker ±âº»½ºÅÈ
-	int Defender_HP = 200, Defender_ATK = 60, Defender_DEF = 100; //Depender ±âº»½ºÅÈ
-	int Allrounder_HP = 100, Allrounder_ATK = 100, Allrounder_DEF = 100; //Allrounder ±âº»½ºÅÈ
-	int Player_HP, Player_ATK, Player_DEF; //½Ç ÀüÅõ¿¡¼­ »ç¿ëÇÏ´Â ½ºÅÈ(¼±ÅÃÇÑ Ä³¸¯ÅÍÀÇ ´É·ÂÄ¡¸¦ º¹»çÇØ »ç¿ëÇÏ´Â º¯¼ö)
-	int Monster1_HP = 200, Monster1_ATK = 80, Monster1_DEF = 60; //½Ç ÀüÅõ¿¡¼­ »ç¿ëÇÏ´Â ¶ó¿îµå1 ¸ó½ºÅÍ ½ºÅÈ 
+	/* ìºë¦­í„°/ëª¬ìŠ¤í„° ìŠ¤íƒ¯*/
+	int Attacker_HP = 130, Attacker_ATK = 120, Attacker_DEF = 50; //Attacker ê¸°ë³¸ìŠ¤íƒ¯
+	int Defender_HP = 200, Defender_ATK = 60, Defender_DEF = 100; //Depender ê¸°ë³¸ìŠ¤íƒ¯
+	int Allrounder_HP = 100, Allrounder_ATK = 100, Allrounder_DEF = 100; //Allrounder ê¸°ë³¸ìŠ¤íƒ¯
+	int Player_HP, Player_ATK, Player_DEF; //ì‹¤ ì „íˆ¬ì—ì„œ ì‚¬ìš©í•˜ëŠ” ìŠ¤íƒ¯(ì„ íƒí•œ ìºë¦­í„°ì˜ ëŠ¥ë ¥ì¹˜ë¥¼ ë³µì‚¬í•´ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜)
+	int Monster1_HP = 200, Monster1_ATK = 80, Monster1_DEF = 60; //ì‹¤ ì „íˆ¬ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë¼ìš´ë“œ1 ëª¬ìŠ¤í„° ìŠ¤íƒ¯ 
 
-	/* ÀüÅõÁß/°ÔÀÓ½Ã½ºÅÛ */
-	int Attack_Number; // [¶§¸®±â] [ÇÒÄû±â] [Â÷±â] [º£±â]ÀÇ °ø°İÀ» Á¤ÇÏ´Â º¯¼ö
-	int Damage; //°è»êÇÑ µ¥¹ÌÁö¼ö¸¦ ´ã´Â º¯¼ö
-	int Turn = 1; //ÅÏÀÌ ¾ó¸¶³ª Áö³ª°¬³ª¸¦ ¾Ë·ÁÁÖ´Â º¯¼ö
-	int Scratch_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ÇÃ·¹ÀÌ¾î [ÇÒÄû±â]ÀÇ °ø°İ¼º°ø·ü
-	int Scratch_random_number; // [ÇÒÄû±â]¼±ÅÃ½Ã Å©¸®Æ¼ÄÃÀÌ ¶ãÁö ¸»Áö¸¦ Á¤ÇÏ±âÀ§ÇÑ ·£´ıÇÔ¼ö¸¦ ³ÖÀº º¯¼ö
-	int Slash_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ÇÃ·¹ÀÌ¾î [º£±â]°ø°İ¼º°ø·ü
-	int Slash_Point_random_number; // [º£±â]¼±ÅÃ½Ã º¥ ºÎÀ§(·£´ı)¿¡ µû¶ó µ¥¹ÌÁö¸¦ ´Ş¸®ÇÏ°Ô ¸¸µé¾îÁÖ´Â º¯¼ö
-	int Monster_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ¸ó½ºÅÍÀÇ °ø°İ¼º°ø·ü
-	int Monster_Attack_random_number; //»ó´ë¸ó½ºÅÍ ÅÏÀÏ½Ã ·£´ıÇÑ ¼ıÀÚ¿¡ µû¶ó °ø°İ¹æ½ÄÀ» Á¤ÇÒ ¼ö ÀÖ°Ô ÇÏ´Â º¯¼ö
+	/* ì „íˆ¬ì¤‘/ê²Œì„ì‹œìŠ¤í…œ */
+	int Attack_Number; // [ë•Œë¦¬ê¸°] [í• í€´ê¸°] [ì°¨ê¸°] [ë² ê¸°]ì˜ ê³µê²©ì„ ì •í•˜ëŠ” ë³€ìˆ˜
+	int Damage; //ê³„ì‚°í•œ ë°ë¯¸ì§€ìˆ˜ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
+	int Turn = 1; //í„´ì´ ì–¼ë§ˆë‚˜ ì§€ë‚˜ê°”ë‚˜ë¥¼ ì•Œë ¤ì£¼ëŠ” ë³€ìˆ˜
+	int Scratch_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ í”Œë ˆì´ì–´ [í• í€´ê¸°]ì˜ ê³µê²©ì„±ê³µë¥ 
+	int Scratch_random_number; // [í• í€´ê¸°]ì„ íƒì‹œ í¬ë¦¬í‹°ì»¬ì´ ëœ°ì§€ ë§ì§€ë¥¼ ì •í•˜ê¸°ìœ„í•œ ëœë¤í•¨ìˆ˜ë¥¼ ë„£ì€ ë³€ìˆ˜
+	int Slash_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ í”Œë ˆì´ì–´ [ë² ê¸°]ê³µê²©ì„±ê³µë¥ 
+	int Slash_Point_random_number; // [ë² ê¸°]ì„ íƒì‹œ ë²¤ ë¶€ìœ„(ëœë¤)ì— ë”°ë¼ ë°ë¯¸ì§€ë¥¼ ë‹¬ë¦¬í•˜ê²Œ ë§Œë“¤ì–´ì£¼ëŠ” ë³€ìˆ˜
+	int Monster_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ ëª¬ìŠ¤í„°ì˜ ê³µê²©ì„±ê³µë¥ 
+	int Monster_Attack_random_number; //ìƒëŒ€ëª¬ìŠ¤í„° í„´ì¼ì‹œ ëœë¤í•œ ìˆ«ìì— ë”°ë¼ ê³µê²©ë°©ì‹ì„ ì •í•  ìˆ˜ ìˆê²Œ í•˜ëŠ” ë³€ìˆ˜
 
-	srand((unsigned int)time(NULL)); //·£´ıÇÑ ¼ıÀÚ¸¦ ³ªÅ¸³ª°ÔÇÏ´Â ±¸¹®
+	srand((unsigned int)time(NULL)); //ëœë¤í•œ ìˆ«ìë¥¼ ë‚˜íƒ€ë‚˜ê²Œí•˜ëŠ” êµ¬ë¬¸
 
 
 	puts("[MAIN] --Welcome to HDR 1vs1--");
-	printf("<<°ÔÀÓ½ÃÀÛÀº 1¹ø, µ¥ÀÌÅÍÃÊ±âÈ­´Â 2¹ø, Á¾·á´Â 3¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.>>\n"); //¸ŞÀÎ¼±ÅÃÁö
+	printf("<<ê²Œì„ì‹œì‘ì€ 1ë²ˆ, ë°ì´í„°ì´ˆê¸°í™”ëŠ” 2ë²ˆ, ì¢…ë£ŒëŠ” 3ë²ˆì„ ì…ë ¥í•´ì£¼ì„¸ìš”.>>\n"); //ë©”ì¸ì„ íƒì§€
 	scanf("%d", &First_select);
 
-	if (First_select == 1) { //1¹ø. °ÔÀÓ½ÃÀÛ
-		while (1) { //¹İº¹¹® 1 ½ÃÀÛ
-			printf("\n[Ä³¸¯ÅÍ¸¦ ¼±ÅÃÇÏ½Ê½Ã¿À]------------------\n"); //Ä³¸¯ÅÍ ¼±ÅÃ
-			printf(" -[1]Attacker - °ø°İ¿¡ Æ¯È­µÇ¾î ÀÖ½À´Ï´Ù.\n -[2]Defender - ¹æ¾î¿¡ Æ¯È­µÇ¾î ÀÖ½À´Ï´Ù.\n -[3]Allrounder - º§·±½ºÇüÀÔ´Ï´Ù.\n\n"); //Ä³¸¯ÅÍ ¼³¸í
+	if (First_select == 1) { //1ë²ˆ. ê²Œì„ì‹œì‘
+		while (1) { //ë°˜ë³µë¬¸ 1 ì‹œì‘
+			printf("\n[ìºë¦­í„°ë¥¼ ì„ íƒí•˜ì‹­ì‹œì˜¤]------------------\n"); //ìºë¦­í„° ì„ íƒ
+			printf(" -[1]Attacker - ê³µê²©ì— íŠ¹í™”ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n -[2]Defender - ë°©ì–´ì— íŠ¹í™”ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n -[3]Allrounder - ë²¨ëŸ°ìŠ¤í˜•ì…ë‹ˆë‹¤.\n\n"); //ìºë¦­í„° ì„¤ëª…
 			scanf("%d", &Character_select);
-			if (Character_select == 1) { //1¹ø. Attacker ¼±ÅÃ½Ã..
+			if (Character_select == 1) { //1ë²ˆ. Attacker ì„ íƒì‹œ..
 				Player_HP = Attacker_HP;
 				Player_ATK = Attacker_ATK;
 				Player_DEF = Attacker_DEF;
-				printf("\t -Attacker ¼³Á¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù!-");
+				printf("\t -Attacker ì„¤ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!-");
 				break;
 			}
-			if (Character_select == 2) { //2¹ø. Defender ¼±ÅÃ½Ã..
+			if (Character_select == 2) { //2ë²ˆ. Defender ì„ íƒì‹œ..
 				Player_HP = Defender_HP;
 				Player_ATK = Defender_ATK;
 				Player_DEF = Defender_DEF;
-				printf("\t -Defender ¼³Á¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù!-");
+				printf("\t -Defender ì„¤ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!-");
 				break;
 			}
-			if (Character_select == 3) { //3¹ø. Allrounder ¼±ÅÃ½Ã..
+			if (Character_select == 3) { //3ë²ˆ. Allrounder ì„ íƒì‹œ..
 				Player_HP = Allrounder_HP;
 				Player_ATK = Allrounder_DEF;
 				Player_DEF = Allrounder_DEF;
-				printf("\t -Allrounder ¼³Á¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù!-");
+				printf("\t -Allrounder ì„¤ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!-");
 				break;
 			}
 			else {
-				puts("´Ù½Ã ÀÔ·ÂÇÏ½Ê½Ã¿À"); //Àß¸øµÈ °ªÀ» ÀÔ·Â½Ã ´Ù½Ã ÀÔ·Â¸Ş¼¼Áö
-				Character_select = 0; //ÃÊ±âÈ­
+				puts("ë‹¤ì‹œ ì…ë ¥í•˜ì‹­ì‹œì˜¤"); //ì˜ëª»ëœ ê°’ì„ ì…ë ¥ì‹œ ë‹¤ì‹œ ì…ë ¥ë©”ì„¸ì§€
+				Character_select = 0; //ì´ˆê¸°í™”
 			}
-		} //¹İº¹¹® 1 ³¡
-		printf("\n\n__[STORY]__\n\n´ç½ÅÀº ±æÀ» °¡°í ÀÖ¾ú´Ù.\nÇÏÁö¸¸ ´ç½ÅÀÌ °¡´Â ÀÌ ±æÀº Æò¼Ò¿¡ Èä¾ÇÇÑ ¸ó½ºÅÍµéÀÌ ¸¹ÀÌ ³ªÅ¸³ª°í, ÇÏÇÊ Áö±İÀº ¹ãÀÌ¶ó ´õ ¸¹ÀÌ Ãâ¸ôÇÑ´Ù.\n±×¸®°í ¾î´À¼¼ ´ç½ÅÀº µÚ¸¦ ¦i°íÀÖ´ø ¸ó½ºÅÍ¸¦ º¸°Ô µÇ´Âµ¥..\n\n"); //STAGE 1 ½ºÅä¸®
-		while (1) { //¹İº¹¹® 2 ½ÃÀÛ
-			printf("\n\t=´ç½ÅÀº ¹«¾ùÀ» ÇÒ±î?=");
-			printf("\n\n[1]¶§¸®±â    [2]ÇÒÄû±â    [3]Â÷±â    [4]º£±â\n\nÀÔ·Â -> "); //°ø°İÅ¸ÀÔ ¼±ÅÃ
+		} //ë°˜ë³µë¬¸ 1 ë
+		printf("\n\n__[STORY]__\n\në‹¹ì‹ ì€ ê¸¸ì„ ê°€ê³  ìˆì—ˆë‹¤.\ní•˜ì§€ë§Œ ë‹¹ì‹ ì´ ê°€ëŠ” ì´ ê¸¸ì€ í‰ì†Œì— í‰ì•…í•œ ëª¬ìŠ¤í„°ë“¤ì´ ë§ì´ ë‚˜íƒ€ë‚˜ê³ , í•˜í•„ ì§€ê¸ˆì€ ë°¤ì´ë¼ ë” ë§ì´ ì¶œëª°í•œë‹¤.\nê·¸ë¦¬ê³  ì–´ëŠì„¸ ë‹¹ì‹ ì€ ë’¤ë¥¼ iê³ ìˆë˜ ëª¬ìŠ¤í„°ë¥¼ ë³´ê²Œ ë˜ëŠ”ë°..\n\n"); //STAGE 1 ìŠ¤í† ë¦¬
+		while (1) { //ë°˜ë³µë¬¸ 2 ì‹œì‘
+			printf("\n\t=ë‹¹ì‹ ì€ ë¬´ì—‡ì„ í• ê¹Œ?=");
+			printf("\n\n[1]ë•Œë¦¬ê¸°    [2]í• í€´ê¸°    [3]ì°¨ê¸°    [4]ë² ê¸°\n\nì…ë ¥ -> "); //ê³µê²©íƒ€ì… ì„ íƒ
 			scanf("%d", &Attack_Number);
-			if (Attack_Number == 1) { //¶§¸®±â
-				printf("\n\n==================================[ÅÏ ¼ö : %d]=================================\n\n", Turn);
-				puts("´ç½ÅÀº »ó´ë¸¦ ¶§·È½À´Ï´Ù.");
+			if (Attack_Number == 1) { //ë•Œë¦¬ê¸°
+				printf("\n\n==================================[í„´ ìˆ˜ : %d]=================================\n\n", Turn);
+				puts("ë‹¹ì‹ ì€ ìƒëŒ€ë¥¼ ë•Œë ¸ìŠµë‹ˆë‹¤.");
 				Damage = Player_ATK / 2;
 				Damage -= Monster1_DEF / 3;
-				printf("\n´ç½ÅÀº »ó´ë¿¡°Ô %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.", Damage);
+				printf("\në‹¹ì‹ ì€ ìƒëŒ€ì—ê²Œ %dì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤.", Damage);
 				Monster1_HP -= Damage;
-				printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+				printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 				Turn++;
 				printf("\n\n==============================================================================\n\n");
 			}
-			if (Attack_Number == 2) { //ÇÒÄû±â
-				printf("\n\n==================================[ÅÏ ¼ö : %d]=================================\n\n", Turn);
-				puts("´ç½ÅÀº »ó´ë¸¦ ÇÒÄû¾ú½À´Ï´Ù.");
+			if (Attack_Number == 2) { //í• í€´ê¸°
+				printf("\n\n==================================[í„´ ìˆ˜ : %d]=================================\n\n", Turn);
+				puts("ë‹¹ì‹ ì€ ìƒëŒ€ë¥¼ í• í€´ì—ˆìŠµë‹ˆë‹¤.");
 				Damage = Player_ATK / 4;
 				Damage -= Monster1_DEF / 3;
 				Monster1_HP -= Damage;
-				Scratch_random_number = rand(); //Å©¸®Æ¼ÄÃ °è»ê
-				Scratch_Attack = (int)Scratch_random_number % 10; // 0~9±îÁö ·£´ı¼ıÀÚ µ¹¸²
-				if (Scratch_Attack > 7) { //¸¸¾à 7º¸´Ù Å¬½Ã
+				Scratch_random_number = rand(); //í¬ë¦¬í‹°ì»¬ ê³„ì‚°
+				Scratch_Attack = (int)Scratch_random_number % 10; // 0~9ê¹Œì§€ ëœë¤ìˆ«ì ëŒë¦¼
+				if (Scratch_Attack > 7) { //ë§Œì•½ 7ë³´ë‹¤ í´ì‹œ
 					Damage += Damage * 2;
 					Monster1_HP -= Damage;
-					printf("\n[Å©¸®Æ¼ÄÃ!]"); //Å©¸®Æ¼ÄÃÀº ¹æ¾î·Â ¹«½Ã
+					printf("\n[í¬ë¦¬í‹°ì»¬!]"); //í¬ë¦¬í‹°ì»¬ì€ ë°©ì–´ë ¥ ë¬´ì‹œ
 				}
-				printf("\n´ç½ÅÀº »ó´ë¿¡°Ô %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.", Damage);
-				printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+				printf("\në‹¹ì‹ ì€ ìƒëŒ€ì—ê²Œ %dì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤.", Damage);
+				printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 				Turn++;
 				printf("\n\n==============================================================================\n\n");
 			}
-			if (Attack_Number == 3) { //Â÷±â
-				printf("\n\n==================================[ÅÏ ¼ö : %d]=================================\n\n", Turn);
-				puts("´ç½ÅÀº »ó´ë¸¦ Ã¡½À´Ï´Ù.");
+			if (Attack_Number == 3) { //ì°¨ê¸°
+				printf("\n\n==================================[í„´ ìˆ˜ : %d]=================================\n\n", Turn);
+				puts("ë‹¹ì‹ ì€ ìƒëŒ€ë¥¼ ì°¼ìŠµë‹ˆë‹¤.");
 				Damage = Player_ATK / 2;
 				Damage -= Monster1_DEF / 3;
-				printf("\n´ç½ÅÀº »ó´ë¿¡°Ô %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.", Damage);
+				printf("\në‹¹ì‹ ì€ ìƒëŒ€ì—ê²Œ %dì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤.", Damage);
 				Monster1_HP -= Damage;
-				printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+				printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 				Turn++;
 				printf("\n\n==============================================================================\n\n");
 			}
-			if (Attack_Number == 4) { //º£±â
-				printf("\n\n==================================[ÅÏ ¼ö : %d]=================================\n\n", Turn);
-				printf("´ç½ÅÀº »ó´ë¸¦ ");
-				Slash_Point_random_number = rand(); //·£´ı
+			if (Attack_Number == 4) { //ë² ê¸°
+				printf("\n\n==================================[í„´ ìˆ˜ : %d]=================================\n\n", Turn);
+				printf("ë‹¹ì‹ ì€ ìƒëŒ€ë¥¼ ");
+				Slash_Point_random_number = rand(); //ëœë¤
 				Slash_Attack = (int)Slash_Point_random_number % 10;
-				if (Slash_Attack <= 2) { //2ÀÌÇÏ °ø°İ½ÇÆĞ
-					printf("º£Áö ¸øÇß½À´Ï´Ù.");
-					printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+				if (Slash_Attack <= 2) { //2ì´í•˜ ê³µê²©ì‹¤íŒ¨
+					printf("ë² ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
+					printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 					Turn++;
 				}
-				if (Slash_Attack >= 3 && Slash_Attack <= 5) { //3~5 °ø°İ¼º°ø
-					printf("º£¾ú½À´Ï´Ù.");
+				if (Slash_Attack >= 3 && Slash_Attack <= 5) { //3~5 ê³µê²©ì„±ê³µ
+					printf("ë² ì—ˆìŠµë‹ˆë‹¤.");
 					Damage = Player_ATK / 3;
 					Damage -= Monster1_DEF / 3;
-					printf("\n\n´ç½ÅÀº »ó´ë¿¡°Ô %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.", Damage);
+					printf("\n\në‹¹ì‹ ì€ ìƒëŒ€ì—ê²Œ %dì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤.", Damage);
 					Monster1_HP -= Damage;
-					printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+					printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 					Turn++;
 				}
-				if (Slash_Attack >= 6 && Slash_Attack <= 9) { //6~8 °­ÇÑ°ø°İ¼º°ø
-					printf("Á¦´ë·Î º£¾ú½À´Ï´Ù.");
+				if (Slash_Attack >= 6 && Slash_Attack <= 9) { //6~8 ê°•í•œê³µê²©ì„±ê³µ
+					printf("ì œëŒ€ë¡œ ë² ì—ˆìŠµë‹ˆë‹¤.");
 					Damage = Player_ATK;
 					Damage -= Monster1_DEF / 3;
-					printf("\n\n´ç½ÅÀº »ó´ë¿¡°Ô %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.", Damage);
+					printf("\n\në‹¹ì‹ ì€ ìƒëŒ€ì—ê²Œ %dì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤.", Damage);
 					Monster1_HP -= Damage;
-					printf("\n\n\n=»ó´ë ¸ó½ºÅÍÀÇ ³²Àº HP : %d", Monster1_HP);
+					printf("\n\n\n=ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP : %d", Monster1_HP);
 					Turn++;
 				}
 				printf("\n\n==============================================================================\n\n");
 			}
-			if (Player_HP <= 0 || Monster1_HP <= 0) { //1Â÷ °á°ú°è»ê
-				printf("\n\n\n\t\t¸®Å¸ÀÌ¾î! ¿©±â±îÁö!");
-				if (Player_HP <= 0) { //ÇÃ·¹ÀÌ¾î Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-					printf("\n\t\t½ÂÀÚ : ¸ó½ºÅÍ"); //½ÂÀÚ ¸ó½ºÅÍ
+			if (Player_HP <= 0 || Monster1_HP <= 0) { //1ì°¨ ê²°ê³¼ê³„ì‚°
+				printf("\n\n\n\t\të¦¬íƒ€ì´ì–´! ì—¬ê¸°ê¹Œì§€!");
+				if (Player_HP <= 0) { //í”Œë ˆì´ì–´ ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+					printf("\n\t\tìŠ¹ì : ëª¬ìŠ¤í„°"); //ìŠ¹ì ëª¬ìŠ¤í„°
 				}
-				if (Monster1_HP <= 0) { //¸ó½ºÅÍ Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-					printf("\n\t\t½ÂÀÚ : ÇÃ·¹ÀÌ¾î"); //½ÂÀÚ ÇÃ·¹ÀÌ¾î
+				if (Monster1_HP <= 0) { //ëª¬ìŠ¤í„° ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+					printf("\n\t\tìŠ¹ì : í”Œë ˆì´ì–´"); //ìŠ¹ì í”Œë ˆì´ì–´
 				}
-				printf("\n\t\tÁøÇàµÈ ÅÏ ¼ö : %d\n\n\n", Turn); //ÅÏ ¼ö Ãâ·Â
+				printf("\n\t\tì§„í–‰ëœ í„´ ìˆ˜ : %d\n\n\n", Turn); //í„´ ìˆ˜ ì¶œë ¥
 				break;
 			}
-			if (Turn % 2 == 0) { //(ÅÏÀÌ Â¦¼öÀÏ¶§)¸ó½ºÅÍ °ø°İ ÅÏ
-				printf("\n\n==================================[ÅÏ ¼ö : %d]=================================\n\n", Turn);
-				printf("»ó´ë ¸ó½ºÅÍÀÇ ÅÏÀÔ´Ï´Ù.\n");
+			if (Turn % 2 == 0) { //(í„´ì´ ì§ìˆ˜ì¼ë•Œ)ëª¬ìŠ¤í„° ê³µê²© í„´
+				printf("\n\n==================================[í„´ ìˆ˜ : %d]=================================\n\n", Turn);
+				printf("ìƒëŒ€ ëª¬ìŠ¤í„°ì˜ í„´ì…ë‹ˆë‹¤.\n");
 				Monster_Attack_random_number = rand();
 				Monster_Attack = (int)Monster_Attack_random_number % 10;
 
 				if (Monster_Attack <= 1) {
-					printf("\n¸ó½ºÅÍ°¡ °ø°İÀ» ½ÇÆĞÇß½À´Ï´Ù.");
-					printf("\n\n\n=µù½ÅÀÇ Hp : %d", Player_HP);
+					printf("\nëª¬ìŠ¤í„°ê°€ ê³µê²©ì„ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
+					printf("\n\n\n=ë”©ì‹ ì˜ Hp : %d", Player_HP);
 					Turn++;
 					printf("\n\n==============================================================================\n\n");
 				}
 				if (Monster_Attack >= 2 && Monster_Attack <= 7) {
-					printf("\n¸ó½ºÅÍ°¡ °ø°İÀ» Çß½À´Ï´Ù.");
+					printf("\nëª¬ìŠ¤í„°ê°€ ê³µê²©ì„ í–ˆìŠµë‹ˆë‹¤.");
 					Damage = Monster1_ATK / 2;
 					Damage -= Player_DEF / 3;
 					Player_HP -= Damage;
-					printf("\n\n´ç½ÅÀº %d¸¸Å­ÀÇ µ¥¹ÌÁö¸¦ ÀÔ¾ú½À´Ï´Ù.", Damage);
-					printf("\n\n\n=µù½ÅÀÇ Hp : %d", Player_HP);
+					printf("\n\në‹¹ì‹ ì€ %dë§Œí¼ì˜ ë°ë¯¸ì§€ë¥¼ ì…ì—ˆìŠµë‹ˆë‹¤.", Damage);
+					printf("\n\n\n=ë”©ì‹ ì˜ Hp : %d", Player_HP);
 					Turn++;
 					printf("\n\n==============================================================================\n\n");
 				}
 				if (Monster_Attack >= 8 && Monster_Attack <= 9) {
-					printf("\n¸ó½ºÅÍ°¡ °­·ÂÇÑ °ø°İÀ» Çß½À´Ï´Ù!");
+					printf("\nëª¬ìŠ¤í„°ê°€ ê°•ë ¥í•œ ê³µê²©ì„ í–ˆìŠµë‹ˆë‹¤!");
 					Damage = Monster1_ATK;
 					Damage -= Player_DEF / 3;
 					Player_HP -= Damage;
-					printf("\n\n´ç½ÅÀº %d¸¸Å­ÀÇ µ¥¹ÌÁö¸¦ ÀÔ¾ú½À´Ï´Ù.", Damage);
-					printf("\n\n\n=µù½ÅÀÇ Hp : %d", Player_HP);
+					printf("\n\në‹¹ì‹ ì€ %dë§Œí¼ì˜ ë°ë¯¸ì§€ë¥¼ ì…ì—ˆìŠµë‹ˆë‹¤.", Damage);
+					printf("\n\n\n=ë”©ì‹ ì˜ Hp : %d", Player_HP);
 					Turn++;
 					printf("\n\n==============================================================================\n\n");
 				}
 			}
 			if (Player_HP <= 0 || Monster1_HP <= 0) {
-				printf("\n\n\n\t\t³ì´Ù¿î ¹ß»ı! ¿©±â±îÁö!");
+				printf("\n\n\n\t\të…¹ë‹¤ìš´ ë°œìƒ! ì—¬ê¸°ê¹Œì§€!");
 				if (Player_HP <= 0) {
-					printf("\n\t\t½ÂÀÚ : ¸ó½ºÅÍ");
+					printf("\n\t\tìŠ¹ì : ëª¬ìŠ¤í„°");
 				}
 				if (Monster1_HP <= 0) {
-					printf("\n\t\t½ÂÀÚ : ÇÃ·¹ÀÌ¾î");
+					printf("\n\t\tìŠ¹ì : í”Œë ˆì´ì–´");
 				}
-				printf("\n\t\tÁøÇàµÈ ÅÏ ¼ö : %d\n\n\n", Turn);
+				printf("\n\t\tì§„í–‰ëœ í„´ ìˆ˜ : %d\n\n\n", Turn);
 				break;
 			}
 		}
 	}
-	printf("\n\n---»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù---\n\n");
+	printf("\n\n---ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤---\n\n");
 }
 
 /*
 
-ÃÊ±âÈ­ ±¸ÇöÇÏ±â
+ì´ˆê¸°í™” êµ¬í˜„í•˜ê¸°
 
-Á¾·á ±¸ÇöÇÏ±â
+ì¢…ë£Œ êµ¬í˜„í•˜ê¸°
 
-»óÅÂÀÌ»ó(µ¶, ¸¶ºñ µî) ±¸ÇöÇÏ±â
+ìƒíƒœì´ìƒ(ë…, ë§ˆë¹„ ë“±) êµ¬í˜„í•˜ê¸°
 
 */
