@@ -1,5 +1,21 @@
-# FH-Player-vs-Monster-TurnGame
+# Player vs Monster Turngame
 
-#### Third FST HDR Project. Player vs Monster Turn game!
 
-#### FST HDR 프로젝트 세번째. 플레이어 vs 몬스터의 턴제 게임!
+
+<hr/>
+
+
+
+## Introduction
+
+##### It's a simple game where I and Monster fight on a turn-based basis.
+
+
+
+## Motivation
+
+##### - Can't you make a simple game based on the basics you've learned so far?
+
+
+
+## Download
