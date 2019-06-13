@@ -9,7 +9,7 @@
 ## Motivation
 
 #### - 게임을 좋아하고, 지금까지 배운 지식으로 간단한 게임을 만들 수 없을까? 란 생각에서 제작하게 되었다.
-#### - i love game and Can't you make a simple game based on the basics you've learned so far?
+#### - I love game and Can't you make a simple game based on the basics you've learned so far?
 
 
 ## Download Link
@@ -17,12 +17,12 @@
 
 ## how to playing?
 ![1](https://user-images.githubusercontent.com/50266731/59327670-34c2d180-8d25-11e9-9bd3-00723bff0fc7.PNG)
-##### .exe파일을 다운받아 실행합니다.
-##### 시작할려면 1번을 선택하세요.
+##### 먼저 exe파일을 다운받아 실행합니다.
+##### 게임을 시작할려면 1번을 입력하세요.
 
 ![2](https://user-images.githubusercontent.com/50266731/59327831-b581cd80-8d25-11e9-9e60-a938af6a2a3b.PNG)
 ##### **공격특화**, **방어특화**, **밸런스형**
-##### 이중 하나를 선택할 수 있습니다
+##### 이중 하나를 선택할 수 있습니다.
 
 ![3](https://user-images.githubusercontent.com/50266731/59327993-2fb25200-8d26-11e9-8115-29eaec7f0b32.PNG)
 ##### 스토리와 함께 전투가 시작됩니다.
