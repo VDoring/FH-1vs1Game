@@ -31,3 +31,7 @@
 ![4](https://user-images.githubusercontent.com/50266731/59328022-4fe21100-8d26-11e9-8415-4801f4f17e9e.PNG)
 ##### (몬스터의 턴은 자동으로 진행됩니다)
 ##### 공격력과 서로 받는 데미지는 캐릭터마다 다르며, HP가 0 이하가 되면 게임이 종료됩니다!
+
+
+## Development Environment
+##### Windows 10 / Visual studio 2017
