@@ -3,7 +3,7 @@
 ## Introduction
 
 #### - 턴제 기반으로 진행되는 나와 몬스터와 전투를 하는 게임이다.
-#### - It's a simple game where I and Monster fight on a turn-based basis.
+#### - It's a simple game where Me and Monster fight on a turn-based basis.
 
 
 ## Motivation
