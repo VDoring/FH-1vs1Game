@@ -1,63 +1,64 @@
-/* º¯ÇÏÁö ¾Ê´Â º¯¼öµéÀ» ÀúÀåÇÏ´Â °ø°£(Çì´õ) */
+/* ë³€í•˜ì§€ ì•ŠëŠ” ë³€ìˆ˜ë“¤ì„ ì €ì¥í•˜ëŠ” ê³µê°„(í—¤ë”) */
 #ifndef __FUNC_H__
 #define __FUNC_H__
 #include <stdio.h>
 
-/* ¼±ÅÃÁö */
-int First_select; //Ã¹¹øÂ° ¼±ÅÃ. ½ÃÀÛ, ÃÊ±âÈ­, Á¾·áÁß ¾î¶²°ÍÀ» ¼±ÅÃÇÒÁö Á¤ÇÏ´Â º¯¼ö
-int Character_select; //µÎ¹øÂ° ¼±ÅÃ. ¾î¶² Ä³¸¯ÅÍ¸¦ °í¸¦Áö Á¤ÇÏ´Â º¯¼ö
+/* ì„ íƒì§€ */
+int First_select; //ì²«ë²ˆì§¸ ì„ íƒ. ì‹œì‘, ì´ˆê¸°í™”, ì¢…ë£Œì¤‘ ì–´ë–¤ê²ƒì„ ì„ íƒí• ì§€ ì •í•˜ëŠ” ë³€ìˆ˜
+int Character_select; //ë‘ë²ˆì§¸ ì„ íƒ. ì–´ë–¤ ìºë¦­í„°ë¥¼ ê³ ë¥¼ì§€ ì •í•˜ëŠ” ë³€ìˆ˜
 
-/* Ä³¸¯ÅÍ/¸ó½ºÅÍ ½ºÅÈ*/
-int Attacker_HP, Attacker_ATK, Attacker_DEF; //Attacker ±âº»½ºÅÈ
-int Defender_HP, Defender_ATK, Defender_DEF; //Depender ±âº»½ºÅÈ
-int Allrounder_HP, Allrounder_ATK, Allrounder_DEF; //Allrounder ±âº»½ºÅÈ
-int Player_HP, Player_ATK, Player_DEF; //½Ç ÀüÅõ¿¡¼­ »ç¿ëÇÏ´Â ½ºÅÈ(¼±ÅÃÇÑ Ä³¸¯ÅÍÀÇ ´É·ÂÄ¡¸¦ º¹»çÇØ »ç¿ëÇÏ´Â º¯¼ö)
-int Monster1_HP, Monster1_ATK, Monster1_DEF; //½Ç ÀüÅõ¿¡¼­ »ç¿ëÇÏ´Â ¶ó¿îµå1 ¸ó½ºÅÍ ½ºÅÈ 
+/* ìºë¦­í„°/ëª¬ìŠ¤í„° ìŠ¤íƒ¯*/
+int Attacker_HP, Attacker_ATK, Attacker_DEF; //Attacker ê¸°ë³¸ìŠ¤íƒ¯
+int Defender_HP, Defender_ATK, Defender_DEF; //Depender ê¸°ë³¸ìŠ¤íƒ¯
+int Allrounder_HP, Allrounder_ATK, Allrounder_DEF; //Allrounder ê¸°ë³¸ìŠ¤íƒ¯
+int Player_HP, Player_ATK, Player_DEF; //ì‹¤ ì „íˆ¬ì—ì„œ ì‚¬ìš©í•˜ëŠ” ìŠ¤íƒ¯(ì„ íƒí•œ ìºë¦­í„°ì˜ ëŠ¥ë ¥ì¹˜ë¥¼ ë³µì‚¬í•´ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜)
+int Monster1_HP, Monster1_ATK, Monster1_DEF; //ì‹¤ ì „íˆ¬ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë¼ìš´ë“œ1 ëª¬ìŠ¤í„° ìŠ¤íƒ¯ 
 
-/* ÀüÅõÁß/°ÔÀÓ½Ã½ºÅÛ */
-int Attack_Number; // [¶§¸®±â] [ÇÒÄû±â] [Â÷±â] [º£±â]ÀÇ °ø°İÀ» Á¤ÇÏ´Â º¯¼ö
-int Damage; //°è»êÇÑ µ¥¹ÌÁö¼ö¸¦ ´ã´Â º¯¼ö
-int Turn; //ÅÏÀÌ ¾ó¸¶³ª Áö³ª°¬³ª¸¦ ¾Ë·ÁÁÖ´Â º¯¼ö
-int Scratch_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ÇÃ·¹ÀÌ¾î [ÇÒÄû±â]ÀÇ °ø°İ¼º°ø·ü
-int Scratch_random_number; // [ÇÒÄû±â]¼±ÅÃ½Ã Å©¸®Æ¼ÄÃÀÌ ¶ãÁö ¸»Áö¸¦ Á¤ÇÏ±âÀ§ÇÑ ·£´ıÇÔ¼ö¸¦ ³ÖÀº º¯¼ö
-int Slash_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ÇÃ·¹ÀÌ¾î [º£±â]°ø°İ¼º°ø·ü
-int Slash_Point_random_number; // [º£±â]¼±ÅÃ½Ã º¥ ºÎÀ§(·£´ı)¿¡ µû¶ó µ¥¹ÌÁö¸¦ ´Ş¸®ÇÏ°Ô ¸¸µé¾îÁÖ´Â º¯¼ö
-int Monster_Attack; //·£´ıÇÔ¼ö¿¡ ÀÇÇÑ ¸ó½ºÅÍÀÇ °ø°İ¼º°ø·ü
-int Monster_Attack_random_number; //»ó´ë¸ó½ºÅÍ ÅÏÀÏ½Ã ·£´ıÇÑ ¼ıÀÚ¿¡ µû¶ó °ø°İ¹æ½ÄÀ» Á¤ÇÒ ¼ö ÀÖ°Ô ÇÏ´Â º¯¼ö
-
-
-void random_num(); //³­¼ö»ı¼º±¸¹®
-void title(); //¸ŞÀÎÅ¸ÀÌÆ²(Ã¹È­¸é) Ç¥½Ã
-void choose_character(); //1¹ø. Ä³¸¯ÅÍ ¼±ÅÃ
-void reset_data(); //2¹ø, µ¥ÀÌÅÍ ¸®¼Â
-void set_Attacker(); //Attacker ½ºÅÈ¼³Á¤
-void set_Defender(); //Defender ½ºÅÈ¼³Á¤
-void set_Allrounder(); //Allrounder ½ºÅÈ¼³Á¤
-
-void story(); //ÀüÃß ½ÃÀÛ Àü ½ºÅä¸®
-void player_act(); //ÇÃ·¹ÀÌ¾î Çàµ¿(°ø°İ) ¼±ÅÃ
-void monster_act(); //¸ó½ºÅÍÀÇ ÅÏÀÏ¶§ °ø°İÀ» ÁØºñÇÏ´Â ¹®±¸
-
-void endline_player(); //ÇÃ·¹ÀÌ¾î °ø°İ½Ã ¸ó½ºÅÍÀÇ ³²Àº HPµîÀ» Ãâ·Â
-void endline_monster(); //¸ó½ºÅÍ °ø?½Ã ÇÃ·¹ÀÌ¾îÀÇ ³²Àº HPµîÀ» Ãâ·Â
-
-void player_AttackNum_1(); //ÇÃ·¹ÀÌ¾î°¡ 1¹ø °ø°İÀ» ¼±ÅÃÇßÀ» ¶§
-void player_AttackNum_2(); //ÇÃ·¹ÀÌ¾î°¡ 2¹ø °ø°İÀ» ¼±ÅÃÇßÀ» ¶§
-void player_AttackNum_2_Critical(); //2¹ø °ø°İ Å©¸®Æ¼ÄÃ½Ã
-void player_AttackNum_3(); //ÇÃ·¹ÀÌ¾î°¡ 3¹ø °ø°İÀ» ¼±ÅÃÇßÀ» ¶§
-void player_AttackNum_4(); //ÇÃ·¹ÀÌ¾î°¡ 4¹ø °ø°İÀ» ¼±ÅÃÇßÀ» ¶§
-void player_AttackNum_4_None(); //4¹ø °ø°İ ½ÇÆĞÇßÀ» ¶§
-void player_AttackNum_4_Normal(); //4¹ø °ø°İ ¼º°øÇßÀ» ¶§
-void player_AttackNum_4_Critical(); //4¹ø °ø°İ Å©¸®Æ¼ÄÃ½Ã
-
-void monster_Attack_None(); //¸ó½ºÅÍ°¡ °ø°İÀ» ½ÇÆĞÇßÀ» ¶§
-void monster_Attack_Normal(); //¸ó½ºÅÍ°¡ °ø°İÀ» ¼º°øÇßÀ» ¶§
-void monster_Attack_Critical(); //¸ó½ºÅÍ°¡ Å©¸®Æ¼ÄÃÀ» ¼º°øÇßÀ» ¶§
+/* ì „íˆ¬ì¤‘/ê²Œì„ì‹œìŠ¤í…œ */
+int Attack_Number; // [ë•Œë¦¬ê¸°] [í• í€´ê¸°] [ì°¨ê¸°] [ë² ê¸°]ì˜ ê³µê²©ì„ ì •í•˜ëŠ” ë³€ìˆ˜
+int Damage; //ê³„ì‚°í•œ ë°ë¯¸ì§€ìˆ˜ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
+int Turn; //í„´ì´ ì–¼ë§ˆë‚˜ ì§€ë‚˜ê°”ë‚˜ë¥¼ ì•Œë ¤ì£¼ëŠ” ë³€ìˆ˜
+int monster_Turn; //ëª¬ìŠ¤í„°ê°€ ê³µê²©í•  ì°¨ë¡€ì¸ì§€ ì•Œë ¤ì£¼ëŠ” ë³€ìˆ˜
+int Scratch_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ í”Œë ˆì´ì–´ [í• í€´ê¸°]ì˜ ê³µê²©ì„±ê³µë¥ 
+int Scratch_random_number; // [í• í€´ê¸°]ì„ íƒì‹œ í¬ë¦¬í‹°ì»¬ì´ ëœ°ì§€ ë§ì§€ë¥¼ ì •í•˜ê¸°ìœ„í•œ ëœë¤í•¨ìˆ˜ë¥¼ ë„£ì€ ë³€ìˆ˜
+int Slash_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ í”Œë ˆì´ì–´ [ë² ê¸°]ê³µê²©ì„±ê³µë¥ 
+int Slash_Attack_random_number; // [ë² ê¸°]ì„ íƒì‹œ ë²¤ ë¶€ìœ„(ëœë¤)ì— ë”°ë¼ ë°ë¯¸ì§€ë¥¼ ë‹¬ë¦¬í•˜ê²Œ ë§Œë“¤ì–´ì£¼ëŠ” ë³€ìˆ˜
+int Monster_Attack; //ëœë¤í•¨ìˆ˜ì— ì˜í•œ ëª¬ìŠ¤í„°ì˜ ê³µê²©ì„±ê³µë¥ 
+int Monster_Attack_random_number; //ìƒëŒ€ëª¬ìŠ¤í„° í„´ì¼ì‹œ ëœë¤í•œ ìˆ«ìì— ë”°ë¼ ê³µê²©ë°©ì‹ì„ ì •í•  ìˆ˜ ìˆê²Œ í•˜ëŠ” ë³€ìˆ˜
 
 
-void knockdown_player(); //ÀÚ½ÅÀÇ HP°¡ 0 ÀÌÇÏ·Î ¶³¾îÁ³À» ¶§
-void knockdown_monster(); //»ó´ë¸ó½ºÅÍÀÇ HP°¡ 0 ÀÌÇÏ·Î ¶³¾îÁ³À» ?
-void knockdown_result_turn(); //ÃÑ °á°ú È®ÀÎ
+void random_num(); //ë‚œìˆ˜ìƒì„±êµ¬ë¬¸
+void title(); //ë©”ì¸íƒ€ì´í‹€(ì²«í™”ë©´) í‘œì‹œ
+void choose_character(); //1ë²ˆ. ìºë¦­í„° ì„ íƒ
+void reset_data(); //2ë²ˆ, ë°ì´í„° ë¦¬ì…‹
+void set_Attacker(); //Attacker ìŠ¤íƒ¯ì„¤ì •
+void set_Defender(); //Defender ìŠ¤íƒ¯ì„¤ì •
+void set_Allrounder(); //Allrounder ìŠ¤íƒ¯ì„¤ì •
+
+void story(); //ì „ì¶” ì‹œì‘ ì „ ìŠ¤í† ë¦¬
+void player_act(); //í”Œë ˆì´ì–´ í–‰ë™(ê³µê²©) ì„ íƒ
+void monster_act(); //ëª¬ìŠ¤í„°ì˜ í„´ì¼ë•Œ ê³µê²©ì„ ì¤€ë¹„í•˜ëŠ” ë¬¸êµ¬
+
+void endline_player(); //í”Œë ˆì´ì–´ ê³µê²©ì‹œ ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HPë“±ì„ ì¶œë ¥
+void endline_monster(); //ëª¬ìŠ¤í„° ê³µ?ì‹œ í”Œë ˆì´ì–´ì˜ ë‚¨ì€ HPë“±ì„ ì¶œë ¥
+
+void player_AttackNum_1(); //í”Œë ˆì´ì–´ê°€ 1ë²ˆ ê³µê²©ì„ ì„ íƒí–ˆì„ ë•Œ
+void player_AttackNum_2(); //í”Œë ˆì´ì–´ê°€ 2ë²ˆ ê³µê²©ì„ ì„ íƒí–ˆì„ ë•Œ
+void player_AttackNum_2_Critical(); //2ë²ˆ ê³µê²© í¬ë¦¬í‹°ì»¬ì‹œ
+void player_AttackNum_3(); //í”Œë ˆì´ì–´ê°€ 3ë²ˆ ê³µê²©ì„ ì„ íƒí–ˆì„ ë•Œ
+void player_AttackNum_4(); //í”Œë ˆì´ì–´ê°€ 4ë²ˆ ê³µê²©ì„ ì„ íƒí–ˆì„ ë•Œ
+void player_AttackNum_4_None(); //4ë²ˆ ê³µê²© ì‹¤íŒ¨í–ˆì„ ë•Œ
+void player_AttackNum_4_Normal(); //4ë²ˆ ê³µê²© ì„±ê³µí–ˆì„ ë•Œ
+void player_AttackNum_4_Critical(); //4ë²ˆ ê³µê²© í¬ë¦¬í‹°ì»¬ì‹œ
+
+void monster_Attack_None(); //ëª¬ìŠ¤í„°ê°€ ê³µê²©ì„ ì‹¤íŒ¨í–ˆì„ ë•Œ
+void monster_Attack_Normal(); //ëª¬ìŠ¤í„°ê°€ ê³µê²©ì„ ì„±ê³µí–ˆì„ ë•Œ
+void monster_Attack_Critical(); //ëª¬ìŠ¤í„°ê°€ í¬ë¦¬í‹°ì»¬ì„ ì„±ê³µí–ˆì„ ë•Œ
+
+
+void knockdown_player(); //ìì‹ ì˜ HPê°€ 0 ì´í•˜ë¡œ ë–¨ì–´ì¡Œì„ ë•Œ
+void knockdown_monster(); //ìƒëŒ€ëª¬ìŠ¤í„°ì˜ HPê°€ 0 ì´í•˜ë¡œ ë–¨ì–´ì¡Œì„ ?
+void knockdown_result_turn(); //ì´ ê²°ê³¼ í™•ì¸
 
 
 #endif
