@@ -1,4 +1,4 @@
-#include <stdio.h> //¹öÀü 4 
+#include <stdio.h> //ë²„ì „ 4 
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
@@ -6,115 +6,119 @@
 
 int main()
 {
-	random_num(); //³­¼ö »ı¼º
+	random_num(); //ë‚œìˆ˜ ìƒì„±
 
 	while (1) {
-		title(); //½ÃÀÛÈ­¸éÀÌ ³ªÅ¸³­´Ù
-		if (First_select == 1) { //1¹ø. °ÔÀÓ½ÃÀÛ ¼±ÅÃ½Ã..
+		title(); //ì‹œì‘í™”ë©´ì´ ë‚˜íƒ€ë‚œë‹¤
+		if (First_select == 1) { //1ë²ˆ. ê²Œì„ì‹œì‘ ì„ íƒì‹œ..
 			while (1) {
-				choose_character(); //Ä³¸¯ÅÍ ¼±ÅÃ
-				if (Character_select == 1) { //1¹ø. Attacker ¼±ÅÃ½Ã..
-					set_Attacker(); //Attacker ´É·ÂÄ¡ ¼³Á¤
+				choose_character(); //ìºë¦­í„° ì„ íƒ
+				if (Character_select == 1) { //1ë²ˆ. Attacker ì„ íƒì‹œ..
+					set_Attacker(); //Attacker ëŠ¥ë ¥ì¹˜ ì„¤ì •
 					break;
 				}
-				if (Character_select == 2) { //2¹ø. Defender ¼±ÅÃ½Ã..
-					set_Defender(); //Defender ´É·ÂÄ¡ ¼³Á¤
+				if (Character_select == 2) { //2ë²ˆ. Defender ì„ íƒì‹œ..
+					set_Defender(); //Defender ëŠ¥ë ¥ì¹˜ ì„¤ì •
 					break;
 				}
-				if (Character_select == 3) { //3¹ø. Allrounder ¼±ÅÃ½Ã..
-					set_Allrounder(); //Allrounder ´É·ÂÄ¡ ¼³Á¤
+				if (Character_select == 3) { //3ë²ˆ. Allrounder ì„ íƒì‹œ..
+					set_Allrounder(); //Allrounder ëŠ¥ë ¥ì¹˜ ì„¤ì •
 					break;
 				}
 				else {
-					puts("´Ù½Ã ÀÔ·ÂÇÏ½Ê½Ã¿À");//´Ù¸¥°É ÀÔ·Â½Ã
+					printf("\n[ë‹¤ì‹œ ì…ë ¥í•˜ì‹­ì‹œì˜¤]\n\n");//ë‹¤ë¥¸ê±¸ ì…ë ¥ì‹œ
 				}
 			}
 
-			story(); //°ÔÀÓ ½ÃÀÛ Àü ½ºÅä¸®
+			story(); //ê²Œì„ ì‹œì‘ ì „ ìŠ¤í† ë¦¬
 
 			while (1) {
-				player_act(); //°ø°İ¹æ½Ä ¼±ÅÃ
-				if (Attack_Number == 1) { // 1. ¶§¸®±â ¼±ÅÃ½Ã..
-					player_AttackNum_1(); // 1¹ø °ø°İ
-					endline_player(); //¸ó½ºÅÍ¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+				player_act(); //ê³µê²©ë°©ì‹ ì„ íƒ
+				if (Attack_Number == 1) { // 1. ë•Œë¦¬ê¸° ì„ íƒì‹œ..
+					player_AttackNum_1(); // 1ë²ˆ ê³µê²©
+					endline_player(); //ëª¬ìŠ¤í„°ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 				}
-				if (Attack_Number == 2) { // 2. ÇÒÄû±â ¼±ÅÃ½Ã..
-					player_AttackNum_2(); //2¹ø °ø°İ
-					if (Scratch_Attack > 5) { //·£´ı¼ıÀÚ°¡ 5º¸´Ù Å¬½Ã
-						player_AttackNum_2_Critical(); //Å©¸®Æ¼ÄÃ
+				if (Attack_Number == 2) { // 2. í• í€´ê¸° ì„ íƒì‹œ..
+					player_AttackNum_2(); //2ë²ˆ ê³µê²©
+					if (Scratch_Attack > 5) { //ëœë¤ìˆ«ìê°€ 5ë³´ë‹¤ í´ì‹œ
+						player_AttackNum_2_Critical(); //í¬ë¦¬í‹°ì»¬
 					}
-					endline_player(); //¸ó½ºÅÍ¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+					endline_player(); //ëª¬ìŠ¤í„°ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 				}
-				if (Attack_Number == 3) { //3. Â÷±â ¼±ÅÃ½Ã..   <ÃßÈÄ Âù ºÎºĞ Ãæ°İÀ¸·Î ÀÎÇØ Áö¼ÓÀûÀÎ µ¥¹ÌÁö¸¦ ³Ö°Ô²û Ãß°¡ÇÏ±â>
-					player_AttackNum_3(); //3¹ø °ø°İ
-					endline_player();//¸ó½ºÅÍ¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+				if (Attack_Number == 3) { //3. ì°¨ê¸° ì„ íƒì‹œ..   <ì¶”í›„ ì°¬ ë¶€ë¶„ ì¶©ê²©ìœ¼ë¡œ ì¸í•´ ì§€ì†ì ì¸ ë°ë¯¸ì§€ë¥¼ ë„£ê²Œë” ì¶”ê°€í•˜ê¸°>
+					player_AttackNum_3(); //3ë²ˆ ê³µê²©
+					endline_player();//ëª¬ìŠ¤í„°ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 				}
-				if (Attack_Number == 4) { //4. º£±â ¼±ÅÃ½Ã..
-					player_AttackNum_4(); //4¹ø °ø°İ
-					if (Slash_Attack <= 2) { //·£´ı¼ıÀÚ°¡ 2 ÀÌÇÏÀÏ½Ã
-						player_AttackNum_4_None(); //°ø°İ ½ÇÆĞ
+				if (Attack_Number == 4) { //4. ë² ê¸° ì„ íƒì‹œ..
+					player_AttackNum_4(); //4ë²ˆ ê³µê²©
+					if (Slash_Attack <= 2) { //ëœë¤ìˆ«ìê°€ 2 ì´í•˜ì¼ì‹œ
+						player_AttackNum_4_None(); //ê³µê²© ì‹¤íŒ¨
 					}
-					if (Slash_Attack >= 3 && Slash_Attack <= 6) { //·£´ı¼ıÀÚ°¡ 3~6ÀÏ½Ã
-						player_AttackNum_4_Normal(); //°ø°İ ¼º°ø
+					if (Slash_Attack >= 3 && Slash_Attack <= 6) { //ëœë¤ìˆ«ìê°€ 3~6ì¼ì‹œ
+						player_AttackNum_4_Normal(); //ê³µê²© ì„±ê³µ
 					}
-					if (Slash_Attack >= 7 && Slash_Attack <= 9) { //·£´ı¼ıÀÚ°¡ 7~9ÀÏ½Ã
-						player_AttackNum_4_Critical(); //°­·ÂÇÑ °ø°İ ¼º°ø
+					if (Slash_Attack >= 7 && Slash_Attack <= 9) { //ëœë¤ìˆ«ìê°€ 7~9ì¼ì‹œ
+						player_AttackNum_4_Critical(); //ê°•ë ¥í•œ ê³µê²© ì„±ê³µ
 					}
-					endline_player();//¸ó½ºÅÍ¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+					endline_player();//ëª¬ìŠ¤í„°ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 				}
-				if (Player_HP <= 0 || Monster1_HP <= 0) { // [1]°á°ú°è»ê
-					if (Player_HP <= 0) { //ÇÃ·¹ÀÌ¾î Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-						knockdown_player(); //¸ó½ºÅÍ ½Â¸® ¹®±¸ Ãâ·Â
+				if (Player_HP <= 0 || Monster1_HP <= 0) { // [1]ê²°ê³¼ê³„ì‚°
+					if (Player_HP <= 0) { //í”Œë ˆì´ì–´ ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+						knockdown_player(); //ëª¬ìŠ¤í„° ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
 					}
-					if (Monster1_HP <= 0) { //¸ó½ºÅÍ Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-						knockdown_monster(); //ÇÃ·¹ÀÌ¾î ½Â¸® ¹®±¸ Ãâ·Â
+					if (Monster1_HP <= 0) { //ëª¬ìŠ¤í„° ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+						knockdown_monster(); //í”Œë ˆì´ì–´ ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
 					}
-					knockdown_result_turn(); //ÃÑ ÁøÇàµÈ ÅÏ¼ö Ãâ·Â
+					knockdown_result_turn(); //ì´ ì§„í–‰ëœ í„´ìˆ˜ ì¶œë ¥
 					break;
 				}
-				if (Turn % 2 == 0) { //(ÅÏÀÌ Â¦¼öÀÏ¶§)¸ó½ºÅÍÀÇ ÅÏ
-					monster_act(); //¸ó½ºÅÍ ÅÏ ¹®±¸ Ãâ·Â, ·£´ı¼ıÀÚ »ı¼º
-					if (Monster_Attack <= 1) { // ·£´ı¼ıÀÚ°¡ 1ÀÌÇÏÀÏ¶§
-						monster_Attack_None(); // °ø°İ ½ÇÆĞ
-						endline_monster(); // ÇÃ·¹ÀÌ¾î¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+				if (monster_Turn % 2 == 0) { //(í„´ì´ ì§ìˆ˜ì¼ë•Œ)ëª¬ìŠ¤í„°ì˜ í„´
+					monster_act(); //ëª¬ìŠ¤í„° í„´ ë¬¸êµ¬ ì¶œë ¥, ëœë¤ìˆ«ì ìƒì„±
+					if (Monster_Attack <= 1) { // ëœë¤ìˆ«ìê°€ 1ì´í•˜ì¼ë•Œ
+						monster_Attack_None(); // ê³µê²© ì‹¤íŒ¨
+						endline_monster(); // í”Œë ˆì´ì–´ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 					}
-					if (Monster_Attack >= 2 && Monster_Attack <= 7) { //·£´ı¼ıÀÚ°¡ 2~7ÀÏ½Ã °ø°İ ¼º°ø
-						monster_Attack_Normal(); //°ø°İ ¼º°ø
-						endline_monster();//ÇÃ·¹ÀÌ¾î¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+					if (Monster_Attack >= 2 && Monster_Attack <= 7) { //ëœë¤ìˆ«ìê°€ 2~7ì¼ì‹œ ê³µê²© ì„±ê³µ
+						monster_Attack_Normal(); //ê³µê²© ì„±ê³µ
+						endline_monster();//í”Œë ˆì´ì–´ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 					}
-					if (Monster_Attack >= 8 && Monster_Attack <= 9) { //·£´ı¼ıÀÚ°¡ 8~9ÀÏ½Ã °­·ÂÇÑ °ø°İ ¼º°ø
-						monster_Attack_Critical(); //°­·ÂÇÑ °ø°İ ¼º°ø
-						endline_monster();//ÇÃ·¹ÀÌ¾î¿¡°Ô ÀÔÈù µ¥¹ÌÁö, ³²Àº HP Ãâ·Â
+					if (Monster_Attack >= 8 && Monster_Attack <= 9) { //ëœë¤ìˆ«ìê°€ 8~9ì¼ì‹œ ê°•ë ¥í•œ ê³µê²© ì„±ê³µ
+						monster_Attack_Critical(); //ê°•ë ¥í•œ ê³µê²© ì„±ê³µ
+						endline_monster();//í”Œë ˆì´ì–´ì—ê²Œ ì…íŒ ë°ë¯¸ì§€, ë‚¨ì€ HP ì¶œë ¥
 					}
 				}
-				if (Player_HP <= 0 || Monster1_HP <= 0) { // [1]°á°ú°è»ê
-					if (Player_HP <= 0) { //ÇÃ·¹ÀÌ¾î Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-						knockdown_player(); //¸ó½ºÅÍ ½Â¸® ¹®±¸ Ãâ·Â
+				if (Player_HP <= 0 || Monster1_HP <= 0) { // [1]ê²°ê³¼ê³„ì‚°
+					if (Player_HP <= 0) { //í”Œë ˆì´ì–´ ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+						knockdown_player(); //ëª¬ìŠ¤í„° ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
 					}
-					if (Monster1_HP <= 0) { //¸ó½ºÅÍ Ã¤·ÂÀÌ 0 ÀÌÇÏÀÏ½Ã
-						knockdown_monster(); //ÇÃ·¹ÀÌ¾î ½Â¸® ¹®±¸ Ãâ·Â
+					if (Monster1_HP <= 0) { //ëª¬ìŠ¤í„° ì±„ë ¥ì´ 0 ì´í•˜ì¼ì‹œ
+						knockdown_monster(); //í”Œë ˆì´ì–´ ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
 					}
-					knockdown_result_turn(); //ÃÑ ÁøÇàµÈ ÅÏ¼ö Ãâ·Â
+					knockdown_result_turn(); //ì´ ì§„í–‰ëœ í„´ìˆ˜ ì¶œë ¥
 					break;
 				}
 			}
 		}
-		if (First_select == 2) { //2¹ø. µ¥ÀÌÅÍÃÊ±âÈ­ ½ÃÀÛ
-			reset_data(); //ÃÊ±âÈ­
+		if (First_select == 2) { //2ë²ˆ. ë°ì´í„°ì´ˆê¸°í™” ì‹œì‘
+			reset_data(); //ì´ˆê¸°í™”
+			printf("\nì´ˆê¸°í™”ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n\n\n");
 		}
-		if (First_select == 3) { //3¹ø. ÇÁ·Î±×·¥ Á¾·á
-			printf("\nÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù.\n");
+		if (First_select == 3) { //3ë²ˆ. í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+			printf("\ní”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤.\n");
 			break;
 		}
+		else {
+			printf("\n[ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”]\n\n"); //ì²« ë©”ë‰´ì—ì„œ ì˜ëª» ì…ë ¥ì‹œ
+		}
 	}
-	printf("\n\n---»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù---\n\n");
-	Sleep(2000); //¹®±¸µµ ¸øº¸°í ¹Ù·Î Á¾·áµÇ´Â°É ¹æÁö
+	printf("\n\n---ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤---\n\n");
+	Sleep(2000); //ë¬¸êµ¬ë„ ëª»ë³´ê³  ë°”ë¡œ ì¢…ë£Œë˜ëŠ”ê±¸ ë°©ì§€
 }
 
 
 /*
 
-¸ó½ºÅÍÀÇ °­·ÂÇÑ °ø°İ °è»ê½Ä ¼öÁ¤ÇØº¸±â
-»óÅÂÀÌ»ó(µ¶, ¸¶ºñ µî) ±¸ÇöÇÏ±â
+ëª¬ìŠ¤í„°ì˜ ê°•ë ¥í•œ ê³µê²© ê³„ì‚°ì‹ ìˆ˜ì •í•´ë³´ê¸°
+ìƒíƒœì´ìƒ(ë…, ë§ˆë¹„ ë“±) êµ¬í˜„í•˜ê¸°
 
 */
