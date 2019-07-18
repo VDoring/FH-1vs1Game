@@ -16,7 +16,6 @@
 
 ## Download Link
 #### - https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
-##### (I'm developing English now. Sooner or later, we will be able to game play!)
 
 <br/><br/><br/>
 
