@@ -1,0 +1,25 @@
+system("mode con cols=120 lines=40");
+가로크기 120, 세로크기 40으로 설정함
+tip : 이게 화면을 초기화하는 기능도 가지고 있음
+
+
+	gotoxy(x, y + 0); printf("______               ___  ___"); Sleep(100); //총 가로길이 29
+	gotoxy(x, y + 1); printf("| ___ \\              |  \\/  |"); Sleep(100);
+	gotoxy(x, y + 2); printf("| |_/ / __   __ ___  | .  . |"); Sleep(100);
+	gotoxy(x, y + 3); printf("|  __/  \\ \\ / // __| | |\\/| |"); Sleep(100);
+	gotoxy(x, y + 4); printf("| |      \\ V / \\__ \\ | |  | |"); Sleep(100);
+	gotoxy(x, y + 5); printf("\\_|       \\_/  |___/ \\_|  |_/"); Sleep(100);
+	gotoxy(x, y + 8); printf("        [1] 게임 시작");
+	gotoxy(x, y + 10); printf("        [2] 초기화");
+	gotoxy(x, y + 12); printf("        [3] 종료");
+	gotoxy(x, y + 15); printf("  Input  :  "); Sleep(125);
+	gotoxy(x + 13, y + 15); scanf("%d", &First_select); //번호 입력
+타이틀 화면을 멋지게 변경
+
+
+system("cls");
+화면 지우기
+
+
+_____________________________________________________________________________________________________________
+1. 캐릭터 선택 편집하기
