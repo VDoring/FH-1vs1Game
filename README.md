@@ -16,9 +16,9 @@
 
 ## Download Link
 #### - https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
-#### 만약 Wacatac.B!ml 에러가 나타나면, 윈도우디펜더에서 저 에러를 허용하고 다시 실행해보세요.
-#### if "Wacatac.B!ml" error appear, please allow it in the Allowed Threats window defender.
-##### (I don't know why this error appears ㅡ.ㅡ;)
+##### 만약 Wacatac.B!ml 에러가 나타나면, 윈도우디펜더에서 저 에러를 허용하고 다시 실행해보세요.
+##### if "Wacatac.B!ml" error appear, please allow it in the Allowed Threats window defender.
+###### (I don't know why this error appears ㅡ.ㅡ;)
 
 <br/><br/><br/>
 
