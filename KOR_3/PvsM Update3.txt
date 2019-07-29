@@ -1,0 +1,48 @@
+void exit() {
+	int x = 44, y = 5;
+	gotoxy(x + 2, y + 10);  printf("종료중..."); Sleep(100);
+	gotoxy(x + 2, y + 10);  printf("[사용해주셔서 감사합니다]"); Sleep(2000);
+}
+
+메인화면에서 3번 눌러 종료시 따로 저렇게 뜰 수 있게끔 함수 선언해서 작업함
+
+
+
+
+gotoxy(x + 18, y + 13); printf("{ 당신은 이제 Attacker입니다..! }");
+어택커 디펜더 올라운더 설정시 위치 조정 및 문구 수정
+
+
+
+
+
+
+
+
+
+void story() { //STAGE 1 스토리
+	int x = 47, y = 2;
+	system("mode con cols=110 lines=37");
+	gotoxy(x, y); printf("[ 스토리 ]");
+	gotoxy(x - 15, y + 4); printf("미로의 함정에 빠진 나."); Sleep(1200);
+	gotoxy(x - 15, y + 6); printf("사방에서 몰려오는 몬스터들."); Sleep(1200);
+	gotoxy(x - 15, y + 8); printf("동료들도 하나둘씩 쓰러져가고.."); Sleep(1200);
+	gotoxy(x - 15, y + 12); printf("위기라고 느낀 순간"); Sleep(1200);
+	gotoxy(x - 15, y + 14); printf("최종보스의 위엄을 뽐내며"); Sleep(1200);
+	gotoxy(x - 15, y + 16); printf("한 몬스터가 나에게 결투를 신청하였다"); Sleep(1200);
+	gotoxy(x - 15, y + 21); printf("부하 몬스터가 지켜보는 앞에서 최후의 결투가 시작되었다"); Sleep(1200);
+	gotoxy(x - 15, y + 24); printf("...최후의 싸움을 위해"); Sleep(1200);
+	gotoxy(x, y + 28); printf("\"간다..!\""); Sleep(500);
+}
+
+허접한 스토리 대폭 개선
+
+
+_____________________________________________________________________________________________________________________________
+for (loop = 0; ; loop++) {
+		if (kbhit()) break;
+		if (loop % 200 == 0) gotoxy(x - 15, y + 2); printf("★");
+		if ((loop % 200 - 100) == 0) gotoxy(x - 15, y + 2); printf(" ");
+		Sleep(10);
+	}
+메인화면에 별 왔다갔다하는거 시도하기
