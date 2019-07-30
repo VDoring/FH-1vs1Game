@@ -25,7 +25,7 @@
 -----------------------------
 
 ## 1.
-![kor1](https://user-images.githubusercontent.com/50266731/61592300-71c79100-ac0c-11e9-9455-ada79ead9863.PNG)
+![k1](https://user-images.githubusercontent.com/50266731/62107228-2125f700-b2e2-11e9-9d74-05f4646e146f.PNG)
 ![eng1](https://user-images.githubusercontent.com/50266731/61592402-ccadb800-ac0d-11e9-8228-b92b44342272.PNG)
 #### [Release](https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases)에서 .exe파일을 다운받아 실행합니다.
 #### Enter [Release](https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases) and download .exe file.
@@ -33,7 +33,7 @@
 <br/><br/>
 
 ## 2.
-![kor2](https://user-images.githubusercontent.com/50266731/61592367-67f25d80-ac0d-11e9-8eb7-7aaf37b42bee.PNG)
+![k2](https://user-images.githubusercontent.com/50266731/62107244-2a16c880-b2e2-11e9-8a50-654fa9b93d8b.PNG)
 ![eng2](https://user-images.githubusercontent.com/50266731/61592407-d7684d00-ac0d-11e9-8464-d68fbccddbad.PNG)
 #### **공격특화**, **방어특화**, **밸런스형** 중 하나를 선택할 수 있습니다.
 #### You can choose **Attack specialization**, **Defence specialization**, **Balanced** Character.
@@ -41,7 +41,7 @@
 <br/><br/>
 
 ## 3.
-![kor3](https://user-images.githubusercontent.com/50266731/61592388-8d7f6700-ac0d-11e9-9324-0b40fdda7ccb.PNG)
+![k3](https://user-images.githubusercontent.com/50266731/62107261-33a03080-b2e2-11e9-9ec7-70387b20346f.PNG)
 ![eng3](https://user-images.githubusercontent.com/50266731/61592415-e818c300-ac0d-11e9-978e-df7093eb1052.PNG)
 #### 스토리와 함께 전투가 시작됩니다.
 #### After the story, the battle begins.
@@ -49,12 +49,12 @@
 <br/><br/>
 
 ## 4.
-![kor4](https://user-images.githubusercontent.com/50266731/61592391-9708cf00-ac0d-11e9-9806-65eec189bff9.PNG)
+![k4](https://user-images.githubusercontent.com/50266731/62107272-38fd7b00-b2e2-11e9-842e-800dc86b40a3.PNG)
 ![eng4](https://user-images.githubusercontent.com/50266731/61592418-f535b200-ac0d-11e9-816f-61bb0c14787e.PNG)
 
 <br/><br/>
 
-![kor5](https://user-images.githubusercontent.com/50266731/61592394-a38d2780-ac0d-11e9-9a89-fe7de2ef0073.PNG)
+![k5](https://user-images.githubusercontent.com/50266731/62107284-4155b600-b2e2-11e9-961b-92d9da8ae82d.PNG)
 ![eng5](https://user-images.githubusercontent.com/50266731/61592421-f830a280-ac0d-11e9-8fef-26bad64f8e58.PNG)
 #### 몬스터의 턴은 자동으로 진행되고, HP가 0 이하가 되면 게임이 종료됩니다!
 #### Monster's turn is automatic. If HP is 0, the game will end.
