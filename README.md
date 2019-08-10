@@ -2,20 +2,20 @@
 
 ## Introduction
 
-#### - 턴제 기반으로 진행되는 나와 몬스터와의 전투를 하는 게임이다.
-#### - It's a simple game where Me and Monster fight on a turn-based basis.
+- #### 턴제 기반으로 진행되는 나와 몬스터와의 전투를 하는 게임이다.
+- #### It's a simple game where Me and Monster fight on a turn-based basis.
 
 <br/><br/>
 
 ## Motivation
 
-#### - 게임을 좋아하고, 지금까지 배운 지식으로 간단한 게임을 만들 수 없을까? 란 생각에서 제작하게 되었다.
-#### - I love game and Can't you make a simple game based on the basics you've learned so far.
+- #### 게임을 좋아하고, 지금까지 배운 지식으로 간단한 게임을 만들 수 없을까? 란 생각에서 제작하게 되었다.
+- #### I love game and Can't you make a simple game based on the basics you've learned so far.
 
 <br/><br/>
 
 ## Download Link
-#### - https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
+- #### https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
 ##### ".exe"파일 다운로드 오류를 해결했습니다!
 ##### Successfully resolved ".exe" download error!
 
@@ -63,4 +63,4 @@
 
 ---------------------------------
 ## Development Environment
-#### - Windows 10 / Visual Studio 2017
+- #### Windows 10 / Visual Studio 2017
