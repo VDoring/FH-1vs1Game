@@ -16,8 +16,6 @@
 
 ## Download Link
 - #### https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
-##### ".exe"파일 다운로드 오류를 해결했습니다!
-##### Successfully resolved ".exe" download error!
 
 <br/><br/><br/>
 
