@@ -16,7 +16,8 @@
 
 ## Download Link
 - #### https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
-
+##### Debug exe파일은 프로그램 실행과 관련된 도구가 있어야 합니다!
+##### The Debug exe file must have tools associated with running the program!
 
 <br/><br/><br/>
 
