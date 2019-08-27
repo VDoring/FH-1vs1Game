@@ -2,20 +2,21 @@
 
 ## Introduction
 
-- #### 턴제 기반으로 진행되는 나와 몬스터와의 전투를 하는 게임이다.
+- #### 턴제 기반으로 진행되는 몬스터와의 전투 게임.
 - #### It's a simple game where Me and Monster fight on a turn-based basis.
 
 <br/><br/>
 
 ## Motivation
 
-- #### 게임을 좋아하고, 지금까지 배운 지식으로 간단한 게임을 만들 수 없을까? 란 생각에서 제작하게 되었다.
+- #### 게임을 좋아하면서도 지금까지 배운 지식으로 간단한 게임을 만들 수 없을까? 란 의문에서 시작하게 됨.
 - #### I love game and Can't you make a simple game based on the basics you've learned so far.
 
 <br/><br/>
 
 ## Download Link
 - #### https://github.com/VDoring/FH-Player-vs-Monster-TurnGame/releases
+
 
 <br/><br/><br/>
 
