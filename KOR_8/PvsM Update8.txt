@@ -1,0 +1,26 @@
+player_monster_visual()에 있던 Attacker용 아스카아트를 player_Attacker_visual()함수로 옳겼습니다.
+그리고 다른 아스키아트로 바꼈습니다.
+
+      .,;;;;;;;::::::cccccccccccccclllllllllllcllllllllllllllllllclcllcccccccc:::;;::
+      .,;;;;;;;;;:::::cccllllcllclllllolllllllcllllllllllllllcllcllcllcccccccc::c;;::
+      .,cccccccccllloddl:cc;,;lddddol;;,;lddddloxdddddddddddddddddoododdooooooloo::ll
+      .;lllllloddddddxxo:'.':dxdxko,. .':dkkkdodxxxxxxxxxxxxxxxxxxxxxxxxddddddddd::oo
+      .;cllooooodoooodddxc...:l:;:,.':ldkOOkkxodkkkxxxxkxxxxxxxxxxxxxxxxxxxddddddc:od
+      .:olllcccllooddoc::;'.. .''.'';:;',codkxoxkxxxdxkxxxkkxxxxxxxxxxxxxxxxdddddccdd
+    .',;'.......'cddl;.... ...''''...','',,;:c:;;cc'.,;,cddoddoooooooodooddddddddlcod
+    .. .        'ldl;'...  .:;....,;,,,..........;.    ':c:loooooooooooooooooooooc:od
+       ....',,',:looooooc.  .. ...,lo:'...      ',. .,oxkxxkxxxkkkxxkxxxxxxxxxdooc:lo
+         .....''''''',,,,'.......,cdxc...    ...',,;oxxxxxxdxxxxxxxxddxddxdddd:'....,
+               ..............',;:odkd,..   ...',;:odddooooooooooooooooooolllll:......
+  ......'',;;;;::::cc:c:,,,..';lloxko'   ..,;;;;;;cdxxxxxxddxxddddddddddoooooo:......
+llooddxkOOOOOO000000K0Oxlcc'.''';oxdd,  ,dOO0OOOkkkO0OO0OOOOOOOOOOOOOOOOOkkkkkdoooodd
+0KKKKKKKKKKXXXXXXXXXOxk0xl:.......,:ol..xXXXXXXXXXXXXXXXXXXXXKKXXKKKKKKKKKKKKKK000000
+KKXXXXXXXX0dooodxOO0kllc:;'''''..  .,o;cKXXXKK0O00OOOkkxdddddx0XXXXXXXKKKKKKKKKKKKK00
+KKXXXXXXKOo:;;,,,,;cc;,:::;''',''..,ld;'cllcccc:coddollc:clccokKXXXXXXXXKKKKKKKKKKK00
+KKKKKKKOo::;,'...',;ccccclcc:;,''',:c,''......''';:ccokOxdolcoOXXXXXXKKKKKKKKK0000000
+0000000Oko:;,...;lo:;:;;,'.....':ldo:;oddool:'.....  ,OXXXK0OOKKKKKKKK000000000000OOO
+OOO00Od:;,''....'',,,,,.....',;codxxdxO0KKKXX0dl;....:k0KXXKKKKKKKKKK000000KK00000000
+
+
+아스키아트의 크기를 고려해 전투시 플레이어 입력부분이 출력되는 위치를 위쪽으로 조정했습니다.
+40 -> 19
